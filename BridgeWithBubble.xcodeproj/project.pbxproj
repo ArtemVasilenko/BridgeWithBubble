@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ACC32C1A22E0DFBB00B23498 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC32C1922E0DFBB00B23498 /* main.swift */; };
+		ACC32C2322E0DFE900B23498 /* Bubbles.c in Sources */ = {isa = PBXBuildFile; fileRef = ACC32C2222E0DFE900B23498 /* Bubbles.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		ACC32C1622E0DFBB00B23498 /* BridgeWithBubble */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BridgeWithBubble; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC32C1922E0DFBB00B23498 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ACC32C2022E0DFE800B23498 /* BridgeWithBubble-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BridgeWithBubble-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACC32C2122E0DFE900B23498 /* Bubbles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bubbles.h; sourceTree = "<group>"; };
+		ACC32C2222E0DFE900B23498 /* Bubbles.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Bubbles.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				ACC32C1922E0DFBB00B23498 /* main.swift */,
+				ACC32C2122E0DFE900B23498 /* Bubbles.h */,
+				ACC32C2222E0DFE900B23498 /* Bubbles.c */,
+				ACC32C2022E0DFE800B23498 /* BridgeWithBubble-Bridging-Header.h */,
 			);
 			path = BridgeWithBubble;
 			sourceTree = "<group>";
@@ -94,6 +101,7 @@
 				TargetAttributes = {
 					ACC32C1522E0DFBB00B23498 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -121,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC32C1A22E0DFBB00B23498 /* main.swift in Sources */,
+				ACC32C2322E0DFE900B23498 /* Bubbles.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +252,18 @@
 		ACC32C1E22E0DFBB00B23498 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SP8ZAT56L5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BridgeWithBubble/BridgeWithBubble-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,10 +271,17 @@
 		ACC32C1F22E0DFBB00B23498 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SP8ZAT56L5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BridgeWithBubble/BridgeWithBubble-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
